@@ -240,8 +240,9 @@ public class HipChatAppender extends AbstractAppender {
 
     // Message
     if (sub.contains(Substitutions.Message.toString())) {
-      sub = sub.replace(Substitutions.Message.toString(), event.getMessage()
-          .getFormattedMessage());
+      sub = sub.replace(Substitutions.Message.toString(),
+          (event.getMessage() == null ? "null" : event.getMessage()
+              .getFormattedMessage()));
     }
 
     // Marker
